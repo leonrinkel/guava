@@ -1,0 +1,8 @@
+.swp
+.*.swp
+
+/download/*
+!/download/.gitkeep
+
+/output/*
+!/output/.gitkeep
