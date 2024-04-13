@@ -1,5 +1,11 @@
 # guava
 
+## patch
+
+```sh
+git apply --directory=buildroot patches/*.patch
+```
+
 ## configure
 
 ```sh

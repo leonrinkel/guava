@@ -1,0 +1,38 @@
+From 40d8b67a08794da16082c2ab6c2733e29ad65027 Mon Sep 17 00:00:00 2001
+From: Leon Rinkel <leon@rinkel.me>
+Date: Sat, 13 Apr 2024 20:19:02 +0200
+Subject: [PATCH] package/zfs: bump version to 2.2.3
+
+---
+ package/zfs/zfs.hash | 4 ++--
+ package/zfs/zfs.mk   | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/package/zfs/zfs.hash b/package/zfs/zfs.hash
+index 01c86f2bd6..d7bc511c28 100644
+--- a/package/zfs/zfs.hash
++++ b/package/zfs/zfs.hash
+@@ -1,5 +1,5 @@
+-# From https://github.com/openzfs/zfs/releases/download/zfs-2.2.2/zfs-2.2.2.sha256.asc
+-sha256  76bc0547d9ba31d4b0142e417aaaf9f969072c3cb3c1a5b10c8738f39ed12fc9  zfs-2.2.2.tar.gz
++# From https://github.com/openzfs/zfs/releases/download/zfs-2.2.3/zfs-2.2.3.sha256.asc
++sha256  30a512f34ec5c841b8b2b32cc9c1a03fd49391b26c9164d3fb30573fb5d81ac3  zfs-2.2.3.tar.gz
+ 
+ # Hash for license files:
+ sha256  1ffb70c33c4f79f04e947facc5c7851f289609256aacb47fc115f700427d9520  LICENSE
+diff --git a/package/zfs/zfs.mk b/package/zfs/zfs.mk
+index 59cdd31942..185f726d9d 100644
+--- a/package/zfs/zfs.mk
++++ b/package/zfs/zfs.mk
+@@ -4,7 +4,7 @@
+ #
+ ################################################################################
+ 
+-ZFS_VERSION = 2.2.2
++ZFS_VERSION = 2.2.3
+ ZFS_SITE = https://github.com/openzfs/zfs/releases/download/zfs-$(ZFS_VERSION)
+ ZFS_SELINUX_MODULES = zfs
+ ZFS_LICENSE = CDDL
+-- 
+2.34.1
+
