@@ -1,0 +1,91 @@
+From 956f3a09adcba84a9bc5efb69281e262bd4e927d Mon Sep 17 00:00:00 2001
+From: Leon Rinkel <leon@rinkel.me>
+Date: Sat, 13 Apr 2024 23:11:53 +0200
+Subject: [PATCH] package/samba4: bump version to 4.20.0
+
+---
+ ...01-libreplace-disable-libbsd-support.patch | 46 -------------------
+ package/samba4/samba4.hash                    |  4 +-
+ package/samba4/samba4.mk                      |  2 +-
+ 3 files changed, 3 insertions(+), 49 deletions(-)
+ delete mode 100644 package/samba4/0001-libreplace-disable-libbsd-support.patch
+
+diff --git a/package/samba4/0001-libreplace-disable-libbsd-support.patch b/package/samba4/0001-libreplace-disable-libbsd-support.patch
+deleted file mode 100644
+index 8259e91fc6..0000000000
+--- a/package/samba4/0001-libreplace-disable-libbsd-support.patch
++++ /dev/null
+@@ -1,46 +0,0 @@
+-From 4df82c9e03b68dc1621fe4c9ac6a29ae3e64e07e Mon Sep 17 00:00:00 2001
+-From: Gustavo Zacarias <gustavo@zacarias.com.ar>
+-Date: Wed, 7 Sep 2016 23:03:43 -0300
+-Subject: [PATCH] libreplace: disable libbsd support
+-
+-Disable libbsd support, samba4 uses a global config.h for its own
+-codebase and that of heimdal (when building with builtin).
+-This causes redefinition conflicts for link(2) when both standard
+-unistd.h and bsd/unistd.h get included.
+-
+-Signed-off-by: Gustavo Zacarias <gustavo@zacarias.com.ar>
+-[Bernd: rebased for versions 4.7.3, 4.8.0, 4.8.5 & 4.11.13]
+-Signed-off-by: Bernd Kuhls <bernd.kuhls@t-online.de>
+----
+- lib/replace/wscript | 15 ---------------
+- 1 file changed, 15 deletions(-)
+-
+-diff --git a/lib/replace/wscript b/lib/replace/wscript
+-index 240d730cbee..c6d8df43c74 100644
+---- a/lib/replace/wscript
+-+++ b/lib/replace/wscript
+-@@ -436,21 +436,6 @@ def configure(conf):
+- 
+-     strlcpy_in_bsd = False
+- 
+--    # libbsd on some platforms provides strlcpy and strlcat
+--    if not conf.CHECK_FUNCS('strlcpy strlcat'):
+--        if conf.CHECK_FUNCS_IN('strlcpy strlcat', 'bsd', headers='bsd/string.h',
+--                               checklibc=True):
+--            strlcpy_in_bsd = True
+--    if not conf.CHECK_FUNCS('getpeereid'):
+--        conf.CHECK_FUNCS_IN('getpeereid', 'bsd', headers='sys/types.h bsd/unistd.h')
+--    if not conf.CHECK_FUNCS_IN('setproctitle', 'setproctitle', headers='setproctitle.h'):
+--        conf.CHECK_FUNCS_IN('setproctitle', 'bsd', headers='sys/types.h bsd/unistd.h')
+--    if not conf.CHECK_FUNCS('setproctitle_init'):
+--        conf.CHECK_FUNCS_IN('setproctitle_init', 'bsd', headers='sys/types.h bsd/unistd.h')
+--
+--    if not conf.CHECK_FUNCS('closefrom'):
+--        conf.CHECK_FUNCS_IN('closefrom', 'bsd', headers='bsd/unistd.h')
+--
+-     conf.CHECK_CODE('''
+-                 struct ucred cred;
+-                 socklen_t cred_len;
+--- 
+-2.20.1
+-
+diff --git a/package/samba4/samba4.hash b/package/samba4/samba4.hash
+index 4e74e07bd0..73a252660d 100644
+--- a/package/samba4/samba4.hash
++++ b/package/samba4/samba4.hash
+@@ -1,4 +1,4 @@
+ # Locally calculated after checking pgp signature
+-# https://download.samba.org/pub/samba/stable/samba-4.19.5.tar.asc
+-sha256  0e2405b4cec29d0459621f4340a1a74af771ec7cffedff43250cad7f1f87605e  samba-4.19.5.tar.gz
++# https://download.samba.org/pub/samba/stable/samba-4.20.0.tar.asc
++sha256  02672542510ac6e5d0c91c0c14d90ab4e6ec397c709e952c6da3a6e0b4d5a42f  samba-4.20.0.tar.gz
+ sha256  8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903  COPYING
+diff --git a/package/samba4/samba4.mk b/package/samba4/samba4.mk
+index 0980d03175..0e8346705f 100644
+--- a/package/samba4/samba4.mk
++++ b/package/samba4/samba4.mk
+@@ -4,7 +4,7 @@
+ #
+ ################################################################################
+ 
+-SAMBA4_VERSION = 4.19.5
++SAMBA4_VERSION = 4.20.0
+ SAMBA4_SITE = https://download.samba.org/pub/samba/stable
+ SAMBA4_SOURCE = samba-$(SAMBA4_VERSION).tar.gz
+ SAMBA4_INSTALL_STAGING = YES
+-- 
+2.34.1
+
