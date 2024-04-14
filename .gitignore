@@ -6,3 +6,5 @@
 
 /output/*
 !/output/.gitkeep
+
+/external/board/pc/overlay/var/lib/samba/private/passdb.tdb

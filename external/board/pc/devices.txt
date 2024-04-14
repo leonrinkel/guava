@@ -1,0 +1,1 @@
+/var/lib/samba/private/passdb.tdb f 600 0 0 - - - - -
