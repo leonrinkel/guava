@@ -1,0 +1,24 @@
+From 225cfb12b0b22c02e0a326c40ba1c5b68d1e7b0c Mon Sep 17 00:00:00 2001
+From: Leon Rinkel <leon@rinkel.me>
+Date: Sun, 14 Apr 2024 12:42:37 +0200
+Subject: [PATCH] enable zfs-import-scan.service
+
+---
+ etc/systemd/system/50-zfs.preset | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/etc/systemd/system/50-zfs.preset b/etc/systemd/system/50-zfs.preset
+index e4056a92c..35823db87 100644
+--- a/etc/systemd/system/50-zfs.preset
++++ b/etc/systemd/system/50-zfs.preset
+@@ -1,6 +1,6 @@
+ # ZFS is enabled by default
+ enable zfs-import-cache.service
+-disable zfs-import-scan.service
++enable zfs-import-scan.service
+ enable zfs-import.target
+ enable zfs-mount.service
+ enable zfs-share.service
+-- 
+2.34.1
+
