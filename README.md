@@ -25,12 +25,12 @@ git apply --directory=buildroot patches/*.patch
 
 - [x] add samba auth
 - [x] rather run from ram
+- [x] add htop
 - [ ] fix failing units
 - [ ] customize branding
 - [ ] add avahi/zeroconf/mdns
 - [ ] add firewall
 - [ ] add zfs scrub cron
-- [ ] add htop
 - [ ] smart & zfs status reporting
 - [ ] remove unused kernel modules
 - [ ] hardening best practices
