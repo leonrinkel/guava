@@ -24,8 +24,8 @@ git apply --directory=buildroot patches/*.patch
 ## todo
 
 - [x] add samba auth
+- [x] rather run from ram
 - [ ] fix failing units
-- [ ] rather run from ram?
 - [ ] customize branding
 - [ ] add avahi/zeroconf/mdns
 - [ ] add firewall
