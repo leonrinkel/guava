@@ -1,5 +1,12 @@
 # guava
 
+| component      | version   |
+|----------------|-----------|
+| buildroot [^1] | 2024.02.1 |
+| linux     [^2] | 6.8.6     |
+| zfs       [^3] | 2.2.3     |
+| samba     [^4] | 4.20.0    |
+
 ## usage
 
 ### patch
@@ -38,3 +45,8 @@ git apply --directory=buildroot patches/*.patch
 - [ ] prevent remount,rw?
 - [ ] better way of setting smbpasswd
 - [ ] add nfs share
+
+[^1]: https://buildroot.org/download.html
+[^2]: https://kernel.org
+[^3]: https://github.com/openzfs/zfs/releases
+[^4]: https://download.samba.org/pub/samba/
