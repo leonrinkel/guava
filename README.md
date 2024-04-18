@@ -34,8 +34,8 @@ git apply --directory=buildroot patches/*.patch
 - [x] rather run from ram
 - [x] add htop
 - [x] customize branding
+- [x] add avahi/zeroconf/mdns
 - [ ] fix failing units
-- [ ] add avahi/zeroconf/mdns
 - [ ] add firewall
 - [ ] add zfs scrub cron
 - [ ] smart & zfs status reporting
