@@ -35,11 +35,11 @@ git apply --directory=buildroot patches/*.patch
 - [x] add htop
 - [x] customize branding
 - [x] add avahi/zeroconf/mdns
+- [x] remove unused kernel modules
 - [ ] fix failing units
 - [ ] add firewall
 - [ ] add zfs scrub cron
 - [ ] smart & zfs status reporting
-- [ ] remove unused kernel modules
 - [ ] hardening best practices
 - [ ] add things like memtest to grub
 - [ ] prevent remount,rw?
