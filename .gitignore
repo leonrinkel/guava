@@ -8,3 +8,9 @@
 !/output/.gitkeep
 
 /external/board/pc/overlay/var/lib/samba/private/passdb.tdb
+
+/external/board/pc/overlay/etc/ssh/*
+!/external/board/pc/overlay/etc/ssh/.gitkeep
+
+/external/board/pc/overlay/root/.ssh/*
+!/external/board/pc/overlay/root/.ssh/.gitkeep
