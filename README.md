@@ -1,3 +1,5 @@
+Abandoned in favor of https://github.com/leonrinkel/orange.
+
 # guava
 
 OS for my NAS
